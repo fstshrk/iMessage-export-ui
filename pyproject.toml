@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imessage-export-viewer"
+version = "1.0.0"
+description = "Modern Apple Messages-style index and web viewer for imessage-exporter HTML exports."
+readme = "README.md"
+authors = [
+    { name = "Bora Akyol" }
+]
+license = { text = "BSD-3-Clause" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Communications :: Chat",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+keywords = ["imessage", "imessage-exporter", "viewer", "backup", "apple", "messages", "frontend"]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/fstshrk/iMessage-export-ui"
+Repository = "https://github.com/fstshrk/iMessage-export-ui.git"
+Issues = "https://github.com/fstshrk/iMessage-export-ui/issues"
+
+[project.scripts]
+imessage-viewer = "generate_index:main"
+
+[tool.setuptools]
+py-modules = ["generate_index"]
+data-files = { "." = ["style.css", "viewer_helper.js", "LICENSE"] }

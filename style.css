@@ -1,0 +1,294 @@
+/* iMessage Export Enhanced Viewer Stylesheet
+ *
+ * Copyright (c) 2026, Bora Akyol
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause License. See LICENSE for details.
+ *
+ * Automatically linked by imessage-exporter transcripts
+ */
+
+:root {
+  --viewer-nav-bg: rgba(255, 255, 255, 0.88);
+  --viewer-nav-border: rgba(0, 0, 0, 0.12);
+  --viewer-text-primary: #1d1d1f;
+  --viewer-text-secondary: #86868b;
+  --viewer-btn-bg: #f2f2f7;
+  --viewer-btn-hover: #e5e5ea;
+  --viewer-pill-bg: #ffffff;
+  --viewer-pill-border: rgba(0, 0, 0, 0.15);
+  --viewer-accent: #007aff;
+  --viewer-highlight: rgba(0, 122, 255, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --viewer-nav-bg: rgba(28, 28, 30, 0.88);
+    --viewer-nav-border: rgba(255, 255, 255, 0.15);
+    --viewer-text-primary: #f5f5f7;
+    --viewer-text-secondary: #a1a1a6;
+    --viewer-btn-bg: #2c2c2e;
+    --viewer-btn-hover: #3a3a3c;
+    --viewer-pill-bg: #2c2c2e;
+    --viewer-pill-border: rgba(255, 255, 255, 0.2);
+    --viewer-accent: #0a84ff;
+    --viewer-highlight: rgba(10, 132, 255, 0.25);
+  }
+}
+
+/* Floating Navigation Bar */
+#viewer-ui-root {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  margin: 0;
+  padding: 0;
+}
+
+.viewer-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--viewer-nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--viewer-nav-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  gap: 10px;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  background: var(--viewer-btn-bg);
+  color: var(--viewer-text-primary);
+  border: 1px solid var(--viewer-nav-border);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background: var(--viewer-btn-hover);
+  border-color: var(--viewer-accent);
+  color: var(--viewer-accent);
+}
+
+/* Floating Date Pill */
+.date-pill {
+  background: var(--viewer-pill-bg);
+  color: var(--viewer-text-primary);
+  border: 1px solid var(--viewer-pill-border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.date-pill:hover {
+  border-color: var(--viewer-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+}
+
+.date-pill.scrolling {
+  border-color: var(--viewer-accent);
+  background: var(--viewer-accent);
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.date-pill.scrolling .date-caret,
+.date-pill.scrolling .date-icon {
+  color: #ffffff;
+}
+
+.date-icon {
+  font-size: 13px;
+}
+
+.date-text {
+  letter-spacing: -0.2px;
+}
+
+.date-caret {
+  font-size: 11px;
+  color: var(--viewer-text-secondary);
+  transition: transform 0.2s;
+}
+
+/* Timeline Drawer / Popover */
+.timeline-drawer {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 460px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--viewer-nav-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--viewer-nav-border);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  z-index: 10000;
+  animation: drawerSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes drawerSlide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--viewer-nav-border);
+}
+
+.timeline-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--viewer-text-primary);
+  margin: 0;
+}
+
+.close-drawer {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--viewer-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.close-drawer:hover {
+  background: var(--viewer-btn-hover);
+  color: var(--viewer-text-primary);
+}
+
+.timeline-year-group {
+  margin-bottom: 14px;
+}
+
+.timeline-year-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--viewer-accent);
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
+
+.timeline-months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 6px;
+}
+
+.timeline-month-btn {
+  background: var(--viewer-btn-bg);
+  border: 1px solid var(--viewer-nav-border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.15s ease;
+}
+
+.timeline-month-btn:hover {
+  background: var(--viewer-accent);
+  border-color: var(--viewer-accent);
+  color: #ffffff;
+}
+
+.timeline-month-btn:hover .month-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.month-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.month-count {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--viewer-btn-hover);
+  color: var(--viewer-text-secondary);
+  padding: 2px 5px;
+  border-radius: 6px;
+}
+
+/* Highlight target message when jumped to */
+.jump-highlight {
+  animation: pulseGlow 2s ease-out;
+  border-radius: 18px;
+}
+
+@keyframes pulseGlow {
+  0% {
+    background-color: var(--viewer-highlight);
+    box-shadow: 0 0 0 6px var(--viewer-highlight);
+  }
+  70% {
+    background-color: var(--viewer-highlight);
+    box-shadow: 0 0 0 6px var(--viewer-highlight);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
