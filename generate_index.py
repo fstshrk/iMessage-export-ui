@@ -113,7 +113,7 @@ def build_contact_directory(all_files):
             except Exception:
                 pass
 
-        # 1. Look for span title attributes, e.g. <span title="+12063514260"><b>Michelle</b></span>
+        # 1. Look for span title attributes, e.g. <span title="+15550192831"><b>Jane</b></span>
         for phone, name in SPAN_TITLE_RE.findall(content):
             p, n = phone.strip(), name.strip()
             if p.startswith("+") and is_real_contact_name(n):

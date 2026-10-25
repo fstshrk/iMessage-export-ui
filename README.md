@@ -20,16 +20,16 @@ A modern, responsive, **Apple Messages**-style front-end and index generator for
 
 ```text
 ┌─────────────────────────────────┬────────────────────────────────────────────────────────┐
-│ 🔍 Search contacts, messages... │ 👤 Bob Smith   +1 (555) 555-2239                      │
-│ [All] [Direct] [Groups] [Email] │ [⬆ Top]  [⬇ Bottom]  [📅 Jump to Date]  [↗ Open Tab] │
+│ 🔍 Search contacts, messages... │ 👤 Jane Doe         +1 (555) 019-2831                  │
+│ [All] [Direct] [Groups] [Email] │ [⬆ Top]  [⬇ Bottom]  [📅 Jump to Date]  [↗ Open Tab]   │
 ├─────────────────────────────────┼────────────────────────────────────────────────────────┤
-│ (NA) Alice Crypto       2:15 PM │   ┌──────────────────────────────────────────────────┐ │
+│ (AS) Alice Smith        2:15 PM │   ┌──────────────────────────────────────────────────┐ │
 │      See you tonight!       142 │   │              📅 October 2026  ▾                  │ │
 │                                 │   │                                                  │ │
-│ (TM) Bob Smith    Yesterday     │   │ [Me] Hi Bob,  did you get the documents?         │ │
-│      Thanks, looks great!    56 │   │ [Bob ] Yes, looks great! Thanks for sending!     │ │
-│                                 │   │        ❤️ Loved by Bob Smith.                    │ │
-│ (👥) Recep, Sertap       Oct 22 │   │                                                  │ │
+│ (JD) Jane Doe         Yesterday │   │ [Me] Hi Jane, did you get the documents?         │ │
+│      Thanks, looks great!    56 │   │ [Jane] Yes, looks great! Thanks for sending!     │ │
+│                                 │   │        ❤️ Loved by Jane Doe                      │ │
+│ (👥) Project Team        Oct 22 │   │                                                  │ │
 │      No problem at all       28 │   │ [Me] Sounds like a plan!                         │ │
 └─────────────────────────────────┴────────────────────────────────────────────────────────┘
 ```
@@ -43,7 +43,7 @@ A modern, responsive, **Apple Messages**-style front-end and index generator for
   - **Reading Pane**: Full-fidelity transcript viewer embedding the original conversation HTML with light/dark appearance support.
 - **👤 Automatic Contact Name Resolution**:
   - Automatically correlates handles with real contact names found in transcripts, `<span class="sender">` tags, tapback attributions, and mention tags.
-  - Replaces cryptic filenames like `+15033302239.html` with friendly names like **Tony McCormick** (with the underlying phone number shown neatly in a subtitle).
+  - Replaces cryptic filenames like `+15550192831.html` with friendly names like **Jane Doe** (with the underlying phone number shown neatly in a subtitle).
 - **⏱️ Most Current Messages on Top**:
   - Automatically orders conversation messages newest-first by default so you see the latest messages immediately.
   - Includes a `⇅ Newest First` / `⇅ Oldest First` toggle button to switch back to chronological order anytime.
