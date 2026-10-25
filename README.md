@@ -20,16 +20,16 @@ A modern, responsive, **Apple Messages**-style front-end and index generator for
 
 ```text
 ┌─────────────────────────────────┬────────────────────────────────────────────────────────┐
-│ 🔍 Search contacts, messages... │ 👤 Tony McCormick   +1 (503) 330-2239                  │
-│ [All] [Direct] [Groups] [Email] │ [⬆ Top]  [⬇ Bottom]  [📅 Jump to Date]  [↗ Open Tab]   │
+│ 🔍 Search contacts, messages... │ 👤 Bob Smith   +1 (555) 555-2239                      │
+│ [All] [Direct] [Groups] [Email] │ [⬆ Top]  [⬇ Bottom]  [📅 Jump to Date]  [↗ Open Tab] │
 ├─────────────────────────────────┼────────────────────────────────────────────────────────┤
-│ (NA) Noelle Akyol       2:15 PM │   ┌──────────────────────────────────────────────────┐ │
+│ (NA) Alice Crypto       2:15 PM │   ┌──────────────────────────────────────────────────┐ │
 │      See you tonight!       142 │   │              📅 October 2026  ▾                  │ │
 │                                 │   │                                                  │ │
-│ (TM) Tony McCormick   Yesterday │   │ [Me] Hi Tony, did you get the documents?         │ │
-│      Thanks, looks great!    56 │   │ [Tony] Yes, looks great! Thanks for sending!     │ │
-│                                 │   │        ❤️ Loved by Tony McCormick                │ │
-│ (👥) Aydin, Sibel        Oct 22 │   │                                                  │ │
+│ (TM) Bob Smith    Yesterday     │   │ [Me] Hi Bob,  did you get the documents?         │ │
+│      Thanks, looks great!    56 │   │ [Bob ] Yes, looks great! Thanks for sending!     │ │
+│                                 │   │        ❤️ Loved by Bob Smith.                    │ │
+│ (👥) Recep, Sertap       Oct 22 │   │                                                  │ │
 │      No problem at all       28 │   │ [Me] Sounds like a plan!                         │ │
 └─────────────────────────────────┴────────────────────────────────────────────────────────┘
 ```
